@@ -6,11 +6,22 @@ def m_1 (z,a,b):
         elif z =="3":
                 c = a * b
         elif z =="4":
-                c = a / b
+                try:
+                        c = a / b
+                except ZeroDivisionError:
+                        print ('Ошибка! Деление на 0!')
         elif z =="5":
-                c = a // b
+                try:
+                        c = a // b
+                except ZeroDivisionError:
+                        print ('Ошибка! Деление на 0!')
         elif z =="6":
-                c = a % b
+                try:
+                        c = a % b
+                except ZeroDivisionError:
+                        print ('Ошибка! Деление на 0!')
         elif z =="7":
                 c = a ** b
+        else:
+                print ('Ошибка! Неверно выбран номер типа опертатора!')
         return c

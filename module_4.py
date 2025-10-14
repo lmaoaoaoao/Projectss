@@ -4,4 +4,7 @@ def m_4 (z,a,b):
                 c = a in b
         elif z =="2":
                 c = a not in b
+        else:
+                print ('Ошибка! Неверно выбран номер типа опертатора!')
+                
         return c
