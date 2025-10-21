@@ -2,56 +2,113 @@ from tkinter import *
 from random import *
 
 #создание и настройка главного окна
-window = Tk() #создание окна
+root = Tk() #создание окна
 
-window.title('game v0.2') #имя окна
+root.title('game v0.3') #имя окна
 
-window.geometry('600x400') #размер
-window.resizable(0,0) #запрет на изменение размера окна
+root.geometry('1280x360') #размер
+root.resizable(0,0) #запрет на изменение размера окна
 
-window.config(bg = 'lime') #цвет фона
+root.config(bg = '#FAFAD2') #цвет фона
+
+#Диалоговые окна
+
+text='Однажды утром вы получаете странное письмо от давно умершего дедушкё. \nВ письме говорится, что он спрятал семейную реликвию (старинную книгу) в архиве семьи. \nДедушка просит вас отправиться туда и вернуть книгу домой.'
+text1='/Спустя некотрое время/'
+text2='Вы стоите перед массивной дверью старого архива.\nЧтобы войти внутрь, вам нужно подобрать комбинацию замка.\nДверь охраняется тремя различными механизмами, каждый из которых требует особого подхода.'
+text3='Механизм А:'
+
+
+
 
 #Функции
-def sps():
-    sps = ['Stone', 'Paper', 'Scissors']
-    value = choice(sps)
-    label_Text.configure (text=value)
+def d_w1():
+    label.configure (text=text1, font=('Times New Roman', 25))
+    btn1.configure(command=d_w2)
 
+def d_w2():
+    label.configure (text=text2, font=('Comic Snas MS', 20))
+    btn1.configure(command=d_w3)
 
+def d_w3():
+    label.configure (text=text3, font=('Times New Roman', 25))
+    btn1.configure(command=d_w4)
+
+def d_w4():
+    label.configure (text='mhm', font=('Comic Snas MS', 20))
+    btn1.pack_forget()   
+    btnl.pack(anchor=SW,pady=20,padx=150)
+    btn1.pack(side=BOTTOM,pady=20)
+    btnr.pack(anchor=SE,pady=20,padx=150)
+
+def d_w5():
+    label.configure (text='tak-s')
 
 
 
 
 #Виджеты
 
-label_Text = Label(window, text='', fg ='white', font=('Comic Snas MS', 20), bg = "black")
-label_Text.place(y=150, x=250)
+label = Label(root, text=text, fg ='white', font=('Comic Snas MS', 20), bg = "black")
+label.pack(padx=20, pady=30)
 
-stone = Button(window,
-               text='Stone',
+
+btn1 = Button(root,
+               text='Далее',
                font=('Comic Snas MS', 20), 
                bg = "white",
-               command=sps
+               command=d_w1
                )
-stone.place(x=50, y=300)
+btn1.pack(side=BOTTOM,pady=50)
 
-paper = Button(window,
-               text='Paper',
+
+btnl = Button(root,
+               text='левый',
                font=('Comic Snas MS', 20), 
                bg = "white",
-               command=sps
+               command=d_w5
                )
-paper.place(x=250, y=300)
 
-scissors = Button(window,
-               text='Scissors',
+btnc = Button(root,
+               text='посередине',
                font=('Comic Snas MS', 20), 
                bg = "white",
-               command=sps
+               command=d_w5
                )
-scissors.place(x=450, y=300)
+
+btnr = Button(root,
+               text='справа',
+               font=('Comic Snas MS', 20), 
+               bg = "white",
+               command=d_w5
+               )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 #конец прорграммы (запуск)
-window.mainloop()
+root.mainloop()
