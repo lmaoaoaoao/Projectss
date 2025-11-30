@@ -1,10 +1,7 @@
-board = [['1', '2', '3'], ['4', '5', '6'], ['7', '8', '9']]
-
-size = 3
+board = []
 
 
 
-'''
 print ('Enter the board size:', end = '')
 while True:
     size = int(input())
@@ -14,13 +11,17 @@ while True:
         print ('Invalid size. Tru again -', end = '')
 
 
-i = 0
-while i < size:
-    board.append('•')
+line = []
+for i in range (size):
+    line.append('•')
     i += 1
-'''
+    
+for i in range (size):
+    board.append(line)
+    i += 1
 
-# print (board[1][1])
+
+
 
 
 
