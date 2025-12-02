@@ -119,3 +119,18 @@ def wino(board, size):
     
 
 
+def draw(board, size):
+    
+    count = 0
+
+    for c in range (size):
+        for d in range (size):
+            if board[c][d] == '□':
+                count += 1
+            d += 1
+        c += 1
+
+    if count == 0:
+        return True
+    else:
+        return False
