@@ -1,0 +1,24 @@
+{
+    "books": [
+        {
+            "title": "лмао",
+            "author": "лмфао",
+            "status": "выдана"
+        }
+    ],
+    "users": [
+        {
+            "name": "лол",
+            "borrowed_books": [
+                {
+                    "title": "лмао",
+                    "author": "лмфао",
+                    "status": "выдана"
+                }
+            ]
+        }
+    ],
+    "librarians": [
+        "Паладин"
+    ]
+}
